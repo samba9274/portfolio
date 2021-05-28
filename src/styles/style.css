@@ -1,0 +1,535 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-left: #393939 1px solid;
+}
+::-webkit-scrollbar-thumb {
+  background: #424242;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f4f4f;
+}
+
+.light::-webkit-scrollbar-track {
+  background: #fff;
+  border-left: #dbdbdb 1px solid;
+}
+.light::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+}
+.light::-webkit-scrollbar-thumb:hover {
+  background: #929292;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+#Container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: 30px 35px 1fr 22px;
+  grid-template-areas:
+    "MenuBar MenuBar"
+    "Nav EditorGroups"
+    "Nav Editor"
+    "StatusBar StatusBar";
+}
+#MenuBar {
+  grid-area: MenuBar;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "Logo .";
+  color: #adaeae;
+  background: #3c3c3c;
+}
+#MenuBar.light {
+  color: #4b4b4b;
+  background: #dddddd;
+}
+#Logo {
+  align-self: center;
+  justify-self: center;
+  font-size: 18px;
+  color: #24aaf2;
+  grid-area: Logo;
+}
+#Nav {
+  grid-area: Nav;
+  background: #333333;
+}
+#Nav.light {
+  background: #2c2c2c;
+}
+#EditorGroups {
+  grid-area: EditorGroups;
+  background: #252526;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+#EditorGroups.light {
+  background: #f3f3f3;
+}
+#EditorGroups::-webkit-scrollbar {
+  display: none;
+}
+#EditorGroups > div {
+  display: inline-block;
+}
+#Editor {
+  grid-area: Editor;
+  overflow-y: auto;
+  overflow-x: auto;
+  background: #1e1e1e;
+  color: #fff;
+}
+#Editor.light {
+  background: #fff;
+  color: #000;
+}
+#StatusBar {
+  grid-area: StatusBar;
+  background: #087ccc;
+}
+#MenuBar > ul,
+#StatusBar > ul,
+#EditorGroups > ul {
+  align-self: center;
+  list-style-type: none;
+  overflow: hidden;
+}
+#MenuBar > ul > li,
+#StatusBar > ul > li,
+#EditorGroups > ul > li {
+  align-self: center;
+  justify-self: center;
+  float: left;
+  text-decoration: none;
+}
+#MenuBar > ul > li {
+  /* color: #adaeae; */
+  margin: auto 5px;
+  cursor: not-allowed;
+  font-size: 14px;
+}
+#StatusBar > ul > li {
+  color: #fff;
+  margin: auto 5px;
+}
+#StatusBar > ul > li > i {
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 22px;
+  font-size: 14px;
+  width: 22px;
+  height: 22px;
+  margin: auto 5px;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+#Nav > ul > li {
+  margin: 15px auto;
+}
+#Nav > ul > li > button {
+  background: #333333;
+}
+.icon {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 28px;
+  line-height: 50px;
+  color: #848484;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  vertical-align: bottom;
+}
+.icon:hover {
+  color: #fff;
+}
+.editorTab {
+  line-height: 35px;
+  text-align: center;
+  vertical-align: bottom;
+  background: #1e1e1e;
+  font-size: 15px;
+  color: #fff;
+  height: 35px;
+  min-width: 160px;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+.editorTab.light {
+  background: #fff;
+  color: #393939;
+}
+.notSelectedEditorTab {
+  background: #2d2d2d;
+  color: #8f8f8f;
+}
+.notSelectedEditorTab.light {
+  background: #ececec;
+  color: #727272;
+}
+.closeButton {
+  margin: 10px 15px 10px 0;
+  float: right;
+}
+#NavBottom {
+  position: absolute;
+  bottom: 10px;
+}
+.Contact-Dropdown-Button {
+  border: none;
+  cursor: pointer;
+}
+
+.Contact-Dropdown {
+  position: relative;
+  display: inline-block;
+}
+.Contact-Dropdown-Content {
+  display: none;
+  position: absolute;
+  top: -120px;
+  left: 35px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.Contact-Dropdown-Content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.Contact-Dropdown-Content a:hover {
+  background-color: #ddd;
+}
+.Settings-Dropdown-Button {
+  border: none;
+  cursor: pointer;
+}
+.Settings-Dropdown {
+  position: relative;
+  display: inline-block;
+}
+.Settings-Dropdown-Content {
+  display: none;
+  position: absolute;
+  top: -20px;
+  left: 35px;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.Settings-Dropdown-Content label {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.Settings-Dropdown-Content label:hover {
+  background-color: #ddd;
+}
+.show {
+  display: block;
+}
+.Settings-Dropdown-Content div {
+  color: black;
+  margin: 12px 0px 12px 16px;
+  text-decoration: none;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  float: right;
+  width: 40px;
+  height: 24px;
+  margin: 0 5px 12px 5px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+#StatusBar > ul > li {
+  cursor: not-allowed;
+}
+.form_field {
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  color: white;
+  background: transparent;
+  transition: border-color 0.2s;
+  cursor: text;
+  line-height: 26px;
+  margin-left: 40px;
+  white-space: nowrap;
+}
+.form_field.light {
+  color: black;
+}
+.textarea-name[contenteditable]:empty::before {
+  content: "Harry Potter";
+  color: gray;
+}
+
+.textarea-email[contenteditable]:empty::before {
+  content: "awesome_email@mail.com";
+  color: gray;
+}
+
+.textarea-message[contenteditable]:empty::before {
+  content: "I love programming!!!";
+  color: gray;
+}
+.contact-form-field {
+  margin: 20px 40px;
+}
+#ContactSubmit {
+  margin: 20px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 37px;
+  background: #1e1e1e;
+  box-shadow: 6px 6px 12px #1a1a1a, -6px -6px 12px #1e1e1e;
+}
+#ContactSubmit > i {
+  font-size: 20px;
+  color: wheat;
+}
+#ContactSubmit.pressed {
+  border-radius: 37px;
+  background: #1e1e1e;
+  box-shadow: inset 6px 6px 12px #1a1a1a, inset -6px -6px 12px #1e1e1e;
+}
+#ContactSubmit.hover {
+  border-radius: 37px;
+  background: linear-gradient(145deg, #202020, #1b1b1b);
+  box-shadow: 6px 6px 12px #1a1a1a, -6px -6px 12px #1e1e1e;
+}
+
+#ContactSubmit.light {
+  background: #ffffff;
+  box-shadow: 6px 6px 12px #d9d9d9, -6px -6px 12px #ffffff;
+}
+#ContactSubmit > i.light {
+  color: black;
+}
+#ContactSubmit.pressed.light {
+  background: #ffffff;
+  box-shadow: inset 6px 6px 12px #d9d9d9, inset -6px -6px 12px #ffffff;
+}
+#ContactSubmit.hover.light {
+  background: linear-gradient(145deg, #d9d9d9, #ffffff);
+  box-shadow: 6px 6px 12px #d9d9d9, -6px -6px 12px #ffffff;
+}
+.xml-tag {
+  color: #4c86b7;
+}
+
+.xml-tag.light {
+  color: #9d3b3b;
+}
+.json-key {
+  color: #9cdcfe;
+  white-space: nowrap;
+}
+.json-value {
+  color: #cb8f76;
+  min-width: 500px;
+  line-height: 22px;
+}
+.json-seperator {
+  color: white;
+}
+.json-key.light {
+  color: #2266b0;
+}
+.json-value.light {
+  color: #aa2929;
+}
+.json-seperator.light {
+  color: black;
+}
+.json-pair {
+  margin: 20px 40px;
+  white-space: normal;
+}
+.json-key,
+.json-seperator {
+  vertical-align: text-top;
+}
+
+.yaml-key {
+  color: #5193ca;
+  white-space: nowrap;
+}
+.yaml-key,
+.yaml-seperator {
+  vertical-align: text-top;
+}
+.yaml-key.light {
+  color: #932727;
+}
+
+.yaml-seperator {
+  color: white;
+}
+.yaml-seperator.light {
+  color: black;
+}
+.yaml-value,
+.yaml-value > a {
+  color: white;
+  min-width: 500px;
+  line-height: 22px;
+}
+.yaml-value.light,
+.yaml-value > a.light {
+  color: black;
+}
+.project-yaml {
+  margin: 20px 40px;
+  line-height: 20px;
+}
+.project-description {
+  margin: auto 60px;
+}
+
+hr {
+  margin: 10px 20px;
+  opacity: 0.4;
+}
+
+#Home {
+  /* white-space: nowrap; */
+  min-width: max-content;
+}
+
+#Home > h2 {
+  margin-right: 50px;
+}
+
+.md {
+  color: #569cd6;
+}
+
+.md-link {
+  color: #cb8f76;
+}
+
+.md.light {
+  color: #800000;
+}
+
+.md-link.light {
+  color: #a51c1c;
+}
+
+.css-selector {
+  color: #caaf76;
+}
+
+.css-key {
+  color: #9bdbfd;
+}
+
+.css-value {
+  color: #cd9077;
+}
+
+.css-selector.light {
+  color: #800000;
+}
+
+.css-key.light {
+  color: #ff1d1d;
+}
+
+.css-value.light {
+  color: #2366b0;
+}
+
+.css-body {
+  margin: auto 40px;
+}
+
+.skill-css {
+  white-space: nowrap;
+}
+.hidden {
+  visibility: hidden;
+}
