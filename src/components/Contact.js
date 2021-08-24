@@ -7,6 +7,18 @@ export default function Contact({ lightMode }) {
   );
   const sendEmail = (e) => {
     e.preventDefault();
+    if (document.getElementById("name").textContent === "") {
+      alert("Please enter your name.");
+      return;
+    }
+    if (document.getElementById("email").textContent === "") {
+      alert("Please enter your name.");
+      return;
+    }
+    if (document.getElementById("message").textContent === "") {
+      alert("Please enter message.");
+      return;
+    }
     emailjs
       .sendForm(
         "service_mbfbi6u",

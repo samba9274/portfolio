@@ -333,9 +333,13 @@ input:checked + .slider:before {
   background: transparent;
   transition: border-color 0.2s;
   cursor: text;
-  line-height: 26px;
+  line-height: 18px;
   margin-left: 40px;
   white-space: nowrap;
+  display: block;
+  width: min-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .form_field.light {
   color: black;
