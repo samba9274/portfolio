@@ -1,57 +1,27 @@
-export default function SkillCss({
-  language,
-  version,
-  frameworks,
-  proficiency,
-  lightMode,
-}) {
+export default function SkillCss({ name, description, lightMode }) {
   return (
     <div className="skill-css">
       <span className={`css-selector${lightMode ? " light" : ""}`}>
-        .{language}
+        .{name}
       </span>
       {" {"}
       <div className={`css-body${lightMode ? " light" : ""}`}>
-        {version && (
-          <table>
-            <tr>
-              <td className={`css-key${lightMode ? " light" : ""}`}>Version</td>
-              <td> : </td>
-              <td className={`css-value${lightMode ? " light" : ""}`}>
-                {version}
-              </td>
-              <td>;</td>
-            </tr>
+        {description.map((desc, index) => (
+          <table key={index}>
+            <tbody>
+              <tr>
+                <td className={`css-key${lightMode ? " light" : ""}`}>
+                  {desc.key}
+                </td>
+                <td> : </td>
+                <td className={`css-value${lightMode ? " light" : ""}`}>
+                  {desc.value}
+                </td>
+                <td>;</td>
+              </tr>
+            </tbody>
           </table>
-        )}
-        {frameworks && (
-          <table>
-            <tr>
-              <td className={`css-key${lightMode ? " light" : ""}`}>
-                Frameworks
-              </td>
-              <td> : </td>
-              <td className={`css-value${lightMode ? " light" : ""}`}>
-                {frameworks.join(", ")}
-              </td>
-              <td>;</td>
-            </tr>
-          </table>
-        )}
-        {proficiency && (
-          <table>
-            <tr>
-              <td className={`css-key${lightMode ? " light" : ""}`}>
-                Proficiency
-              </td>
-              <td> : </td>
-              <td className={`css-value${lightMode ? " light" : ""}`}>
-                {proficiency}
-              </td>
-              <td>;</td>
-            </tr>
-          </table>
-        )}
+        ))}
       </div>
       {"}"}
     </div>
