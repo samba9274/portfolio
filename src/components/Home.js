@@ -1,3 +1,6 @@
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../firebase";
+
 export default function Home({ lightMode }) {
   return (
     <div id="Home">
@@ -31,6 +34,7 @@ export default function Home({ lightMode }) {
         target="_blank"
         href="/Resume.pdf"
         className={`md-link${lightMode ? " light" : ""}`}
+        onClick={() => logEvent(analytics, "resume_downloaded")}
       >
         Download Resume
       </a>

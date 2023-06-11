@@ -1,6 +1,6 @@
 import React from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firestore";
+import { db } from "../firebase";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import Home from "./Home";

@@ -52,7 +52,7 @@ export default function Nav({
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://www.linkedin.com/in/yash-eksambekar-958a1a1a9/"
+                href="https://www.linkedin.com/in/yash-eksambekar"
               >
                 LinkedIn
               </a>
@@ -66,7 +66,7 @@ export default function Nav({
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://www.instagram.com/samba.9274/"
+                href="https://www.instagram.com/yash.eksambekar"
               >
                 Instagram
               </a>
