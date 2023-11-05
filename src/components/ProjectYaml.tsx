@@ -10,17 +10,13 @@ export const ProjectYaml = ({ name, description }: Project) => {
       <table>
         <tbody>
           <tr>
-            <td className={`yaml-seperator ${state.lightMode && "light"}`}>
-              {constants.hyphen}
-            </td>
-            <td className={`yaml-key ${state.lightMode && "light"}`}>
+            <td className={`yaml-seperator`}>{constants.hyphen}</td>
+            <td className={`yaml-key`}>
               {constants.singleBlankSpace}
               {name}
               {constants.singleBlankSpace}
             </td>
-            <td className={`yaml-seperator ${state.lightMode && "light"}`}>
-              {constants.colon}
-            </td>
+            <td className={`yaml-seperator`}>{constants.colon}</td>
           </tr>
         </tbody>
       </table>
@@ -30,20 +26,11 @@ export const ProjectYaml = ({ name, description }: Project) => {
           <table key={index}>
             <tbody>
               <tr>
-                <td className={`yaml-key ${state.lightMode && "light"}`}>
-                  {desc.key}
-                </td>
-                <td className={`yaml-seperator ${state.lightMode && "light"}`}>
-                  {constants.colon}
-                </td>
-                <td className={`yaml-value ${state.lightMode && "light"}`}>
+                <td className={`yaml-key`}>{desc.key}</td>
+                <td className={`yaml-seperator`}>{constants.colon}</td>
+                <td className={`yaml-value`}>
                   {desc.value.startsWith("http") ? (
-                    <a
-                      target="_blank"
-                      href={desc.value}
-                      rel="noreferrer"
-                      className={state.lightMode && "light"}
-                    >
+                    <a target="_blank" href={desc.value} rel="noreferrer">
                       <u>{desc.value}</u>
                     </a>
                   ) : (

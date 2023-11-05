@@ -1,15 +1,17 @@
 import React from "react";
 import "../styles/style.css";
-import { StateInterface } from "../interfaces";
+import { AppContextType, StateInterface } from "../interfaces";
 import { constants } from "../data";
 import { Components } from ".";
 
-export const AppContext = React.createContext<any>(null);
+export const AppContext = React.createContext<AppContextType>([
+  { openEditors: [""], currentEditor: "" },
+  () => {},
+]);
 
 export const App = () => {
   const [state, setState] = React.useState<StateInterface>({
     openEditors: [constants.pages.home.title],
-    lightMode: false,
     currentEditor: constants.pages.home.title,
   });
   return (

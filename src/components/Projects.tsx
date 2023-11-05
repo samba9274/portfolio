@@ -10,12 +10,8 @@ export const Projects = () => {
   const projects = useFirestore<Project>("projects");
   return (
     <div>
-      <span className={`yaml-key ${state.lightMode && "light"}`}>
-        {constants.pages.projects.title}
-      </span>
-      <span className={`yaml-seperator ${state.lightMode && "light"}`}>
-        {constants.colon}
-      </span>
+      <span className={`yaml-key`}>{constants.pages.projects.title}</span>
+      <span className={`yaml-seperator`}>{constants.colon}</span>
       {projects?.map((project, index) => (
         <Components.Pages.Projects.ProjectYaml
           key={index}

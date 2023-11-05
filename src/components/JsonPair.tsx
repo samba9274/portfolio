@@ -9,22 +9,20 @@ export const JsonPair = ({ JsonKey, JsonValue, comma }: JsonPairProps) => {
     <table className="json-pair">
       <tbody>
         <tr>
-          <td className={`json-key ${state.lightMode && "light"}`}>
+          <td className={`json-key`}>
             {constants.quote}
             {JsonKey}
             {constants.quote}
           </td>
-          <td className={`json-seperator ${state.lightMode && "light"}`}>
+          <td className={`json-seperator`}>
             {constants.singleBlankSpace}:{constants.singleBlankSpace}
           </td>
-          <td className={`json-value ${state.lightMode && "light"}`}>
+          <td className={`json-value`}>
             {constants.quote}
             {JsonValue}
             {constants.quote}
             {comma && (
-              <span className={`json-seperator ${state.lightMode && "light"}`}>
-                {constants.comma}
-              </span>
+              <span className={`json-seperator`}>{constants.comma}</span>
             )}
           </td>
         </tr>

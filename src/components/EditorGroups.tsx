@@ -5,7 +5,7 @@ import { Components } from ".";
 export const EditorGroups = () => {
   const [state] = React.useContext(AppContext);
   return (
-    <div id="EditorGroups" className={state.lightMode && "light"}>
+    <div id="EditorGroups">
       {state.openEditors.map((editor: string, index: number) => (
         <Components.Layout.EditorTab key={index} editor={editor} />
       ))}

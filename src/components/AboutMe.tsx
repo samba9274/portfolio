@@ -6,19 +6,15 @@ export const AboutMe = () => {
   const [state] = React.useContext(AppContext);
   return (
     <div>
-      <span className={`json-seperator ${state.lightMode && "light"}`}>
-        {constants.curlyBraceOpen}
-      </span>
+      <span className={`json-seperator`}>{constants.curlyBraceOpen}</span>
       <div className="json-pair">
-        <span className={`json-key ${state.lightMode && "light"}`}>
+        <span className={`json-key`}>
           {Object.keys(constants.pages.about.aboutJson)[0]}
         </span>
-        <span className={`json-seperator ${state.lightMode && "light"}`}>
+        <span className={`json-seperator`}>
           {constants.singleBlankSpace}:{constants.singleBlankSpace}
         </span>
-        <span className={`json-seperator ${state.lightMode && "light"}`}>
-          {constants.curlyBraceOpen}
-        </span>
+        <span className={`json-seperator`}>{constants.curlyBraceOpen}</span>
         {Object.entries(constants.pages.about.aboutJson["About Me"]).map(
           ([key, value], index) => (
             <Components.Pages.AboutMe.JsonPair
@@ -33,13 +29,9 @@ export const AboutMe = () => {
             />
           )
         )}
-        <span className={`json-seperator ${state.lightMode && "light"}`}>
-          {constants.curlyBraceClose}
-        </span>
+        <span className={`json-seperator`}>{constants.curlyBraceClose}</span>
       </div>
-      <span className={`json-seperator ${state.lightMode && "light"}`}>
-        {constants.curlyBraceClose}
-      </span>
+      <span className={`json-seperator`}>{constants.curlyBraceClose}</span>
     </div>
   );
 };

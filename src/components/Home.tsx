@@ -9,22 +9,18 @@ export const Home = () => {
   return (
     <div id="Home">
       <h1>
-        <span className={`md ${state.lightMode && "light"}`}>
-          {constants.pages.home.topLine}
-        </span>
+        <span className={`md`}>{constants.pages.home.topLine}</span>
       </h1>
       <hr />
       <br />
       <h2>
-        <span className={`md ${state.lightMode && "light"}`}>
-          {constants.pages.home.subLine}
-        </span>
+        <span className={`md`}>{constants.pages.home.subLine}</span>
       </h2>
       <br />
       <ul>
         {constants.pages.home.devs.map((dev, index) => (
           <li key={index}>
-            <span className={`md ${state.lightMode && "light"}`}> - </span>
+            <span className={`md`}> - </span>
             {dev}
           </li>
         ))}
@@ -33,7 +29,7 @@ export const Home = () => {
       <a
         target="_blank"
         href="/Resume.pdf"
-        className={`md-link ${state.lightMode && "light"}`}
+        className={`md-link`}
         onClick={() => logEvent(analytics, "resume_downloaded")}
       >
         {constants.pages.home.downloadResumeLinkText}

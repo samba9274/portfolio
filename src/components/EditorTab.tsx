@@ -22,7 +22,7 @@ export const EditorTab = ({ editor }: EditorTabProps) => {
     <div
       className={`editorTab ${
         state.currentEditor !== editor && "notSelectedEditorTab"
-      } ${state.lightMode && "light"}`}
+      }`}
       onClick={() => onEditorChange(editor)}
     >
       {editor}.

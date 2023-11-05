@@ -23,9 +23,7 @@ export const Contact = () => {
   };
   return (
     <div>
-      <span className={`xml-tag ${state.lightMode && "light"}`}>
-        {"<contact>"}
-      </span>
+      <span className={`xml-tag`}>{"<contact>"}</span>
       <Components.Pages.Contact.ContactFormField
         refObj={nameElement}
         field="name"
@@ -38,21 +36,18 @@ export const Contact = () => {
         refObj={messageElement}
         field="message"
       />
-      <span className={`xml-tag ${state.lightMode && "light"}`}>
-        {"</contact>"}
-      </span>
+      <span className={`xml-tag`}>{"</contact>"}</span>
       <br />
       <div>
         <button
           id="ContactSubmit"
           ref={contactSubmitElement}
-          className={state.lightMode && "light"}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onMouseDown={onKeyDown}
           onMouseUp={onKeyUp}
         >
-          <i className={`fas fa-paper-plane ${state.lightMode && "light"}`}></i>
+          <i className={`fas fa-paper-plane`}></i>
         </button>
       </div>
     </div>

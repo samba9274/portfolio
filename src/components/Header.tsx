@@ -5,7 +5,7 @@ import { constants } from "../data";
 export const Header = () => {
   const [state, setState] = React.useContext(AppContext);
   return (
-    <header id="MenuBar" className={state.lightMode && "light"}>
+    <header id="MenuBar">
       <i
         onClick={() => {
           setState({ ...state, currentEditor: constants.pages.home.title });

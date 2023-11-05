@@ -2,6 +2,7 @@ import React from "react";
 import { AppContext } from "./App";
 import { constants } from "../data";
 import { Components } from ".";
+import useLightMode from "../hooks/useLightMode";
 
 export const Nav = () => {
   const contactDropDown = React.useRef<HTMLDivElement>(null);
@@ -9,6 +10,7 @@ export const Nav = () => {
   const [isContactDropDown, toggleContactDropDown] = React.useState(false);
   const [isSettingsDropDown, toggleSettingsDropDown] = React.useState(false);
   const [state, setState] = React.useContext(AppContext);
+  const [lightMode, toggleLightMode] = useLightMode();
   window.onclick = (event) => {
     if (
       isContactDropDown &&
@@ -26,7 +28,7 @@ export const Nav = () => {
       toggleSettingsDropDown(!isSettingsDropDown);
   };
   return (
-    <nav id="Nav" className={state.lightMode && "light"}>
+    <nav id="Nav">
       <ul>
         {Object.values(constants.pages).map((value, index) => (
           <Components.Layout.NavLink
@@ -77,12 +79,9 @@ export const Nav = () => {
                     className="switch-inside"
                     type="checkbox"
                     onClick={(e) =>
-                      setState({
-                        ...state,
-                        lightMode: (e.target as HTMLInputElement)?.checked,
-                      })
+                      toggleLightMode((e.target as HTMLInputElement).checked)
                     }
-                    defaultChecked={state.lightMode}
+                    defaultChecked={lightMode}
                   />
                   <span className="slider round" />
                 </label>

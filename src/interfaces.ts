@@ -30,7 +30,6 @@ export interface LazyLoadElement {
 
 export interface StateInterface {
   openEditors: string[];
-  lightMode: boolean;
   currentEditor: string;
 }
 
@@ -57,3 +56,15 @@ export interface ContactFormFieldProps {
   field: string;
   refObj: React.RefObject<HTMLSpanElement>;
 }
+
+interface AppContextState {
+  openEditors: string[];
+  currentEditor: string;
+}
+
+export type AppContextType = [state: AppContextState, setState: Function];
+
+export type useLightModeReturn = [
+  lightMode: boolean,
+  toggleLightMode: Function
+];
