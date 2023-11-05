@@ -26,16 +26,11 @@ export const EditorTab = ({ editor }: EditorTabProps) => {
       onClick={() => onEditorChange(editor)}
     >
       {editor}.
-      {(editor === constants.pages.home.title &&
-        constants.pages.home.extension) ||
-        (editor === constants.pages.about.title &&
-          constants.pages.about.extension) ||
-        (editor === constants.pages.projects.title &&
-          constants.pages.projects.extension) ||
-        (editor === constants.pages.skills.title &&
-          constants.pages.skills.extension) ||
-        (editor === constants.pages.contact.title &&
-          constants.pages.contact.extension)}
+      {
+        Object.values(constants.pages).filter(
+          (page) => page.title === editor
+        )[0].extension
+      }
       {editor !== constants.pages.home.title && (
         <i
           onClick={() => onEditorDelete(editor)}

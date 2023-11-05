@@ -208,8 +208,8 @@ a {
 .Contact-Dropdown-Content {
   display: none;
   position: absolute;
-  top: -120px;
-  left: 35px;
+  bottom: 0;
+  left: 50px;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -235,8 +235,8 @@ a {
 .Settings-Dropdown-Content {
   display: none;
   position: absolute;
-  top: -20px;
-  left: 35px;
+  bottom: 0;
+  left: 50px;
   background-color: #f1f1f1;
   min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

@@ -18,7 +18,7 @@ export const constants = {
   socials: [
     { name: "LinkedIn", link: "https://www.linkedin.com/in/yash-eksambekar" },
     { name: "Github", link: "https://github.com/samba9274" },
-    { name: "Instagram", link: "https://www.instagram.com/yash.eksambekar" },
+    // { name: "Instagram", link: "https://www.instagram.com/yash.eksambekar" },
   ],
   pages: {
     home: {
@@ -64,11 +64,11 @@ export const constants = {
       extension: "css",
       className: "far fa-lightbulb",
     },
-    contact: {
-      title: "Contact",
-      component: Components.Pages.Contact.Main,
-      extension: "xml",
-      className: "far fa-envelope",
-    },
+    // contact: {
+    //   title: "Contact",
+    //   component: Components.Pages.Contact.Main,
+    //   extension: "xml",
+    //   className: "far fa-envelope",
+    // },
   },
 };

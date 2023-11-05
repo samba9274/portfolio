@@ -18,6 +18,7 @@ export const AboutMe = () => {
         {Object.entries(constants.pages.about.aboutJson["About Me"]).map(
           ([key, value], index) => (
             <Components.Pages.AboutMe.JsonPair
+              key={index}
               JsonKey={key}
               JsonValue={value}
               comma={
