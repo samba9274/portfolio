@@ -1,8 +1,6 @@
 import React from "react";
-import { AppContext } from "./App";
 import { Components } from ".";
 export const Contact = () => {
-  const [state] = React.useContext(AppContext);
   const nameElement = React.useRef<HTMLSpanElement>(null);
   const emailElement = React.useRef<HTMLSpanElement>(null);
   const messageElement = React.useRef<HTMLSpanElement>(null);

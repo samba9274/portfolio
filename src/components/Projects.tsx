@@ -1,12 +1,9 @@
-import React from "react";
-import { AppContext } from "./App";
 import { Project } from "../interfaces";
 import { constants } from "../data";
 import { Components } from ".";
 import useFirestore from "../hooks/useFirestore";
 
 export const Projects = () => {
-  const [state] = React.useContext(AppContext);
   const projects = useFirestore<Project>("projects");
   return (
     <div>

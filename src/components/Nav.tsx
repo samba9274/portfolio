@@ -1,5 +1,4 @@
 import React from "react";
-import { AppContext } from "./App";
 import { constants } from "../data";
 import { Components } from ".";
 import useLightMode from "../hooks/useLightMode";
@@ -9,7 +8,6 @@ export const Nav = () => {
   const settingsDropDown = React.useRef<HTMLDivElement>(null);
   const [isContactDropDown, toggleContactDropDown] = React.useState(false);
   const [isSettingsDropDown, toggleSettingsDropDown] = React.useState(false);
-  const [state, setState] = React.useContext(AppContext);
   const [lightMode, toggleLightMode] = useLightMode();
   window.onclick = (event) => {
     if (
