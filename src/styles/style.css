@@ -345,12 +345,12 @@ input:checked + .slider:before {
   color: black;
 }
 .textarea-name[contenteditable]:empty::before {
-  content: "Harry Potter";
+  content: "John Doe";
   color: gray;
 }
 
 .textarea-email[contenteditable]:empty::before {
-  content: "awesome_email@mail.com";
+  content: "john.doe@email.com";
   color: gray;
 }
 
@@ -493,6 +493,10 @@ hr {
 
 .md-link {
   color: #cb8f76;
+}
+
+.md-link:hover {
+  text-decoration: underline;
 }
 
 .md.light {
