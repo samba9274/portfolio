@@ -1,7 +1,7 @@
 import React from "react";
 import { useLightModeReturn } from "../interfaces";
 
-function useLightMode(): useLightModeReturn {
+const useLightMode = (): useLightModeReturn => {
   const [lightMode, toggleLightMode] = React.useState<boolean>(false);
   const recursiveAddLight = (root: Element) => {
     root.classList.add("light");
@@ -19,6 +19,6 @@ function useLightMode(): useLightModeReturn {
     [lightMode]
   );
   return [lightMode, toggleLightMode];
-}
+};
 
 export default useLightMode;
